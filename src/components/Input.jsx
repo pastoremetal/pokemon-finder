@@ -2,6 +2,11 @@ import React from "react";
 import TextField from '@material-ui/core/TextField';
 import Typography from "@material-ui/core/Typography";
 import styled from "@material-ui/core/styles/styled";
+import RadioButtonUncheckedIcon from '@material-ui/icons/RadioButtonUnchecked';
+import FormControlLabel from "@material-ui/core/FormControlLabel";
+import Checkbox from "@material-ui/core/Checkbox";
+import CheckCircleIcon from '@material-ui/icons/CheckCircle';
+import green from '@material-ui/core/colors/green';
 
 const StyledTextField = styled(TextField)(({theme}) => ({
     '&': {
@@ -10,19 +15,23 @@ const StyledTextField = styled(TextField)(({theme}) => ({
     },
     '& label': {
         color: '#fff',
+        position: 'relative',
         '& > span:last-child': {
             visibility: 'hidden'
         }
     },
     '& label + div': {
-        marginTop: '3.5rem'
+        marginTop: '3rem'
     },
     '& label + div:before': {
         borderBottomColor: '#fff',
         borderBottomWidth: '2px'
     },
-    '& input, select': {
+    '& input, & select': {
         color: '#fff',
+    },
+    '& select, & option': {
+        textTransform: 'capitalize'
     }
 }));
 
@@ -45,3 +54,25 @@ export const InputText = ({required, id, label, onChange, select, SelectProps, c
     </StyledTextField>
 );
 
+const StyledCheckBox = styled(Checkbox)(({theme}) => ({
+    '&, & svg': {
+        color: green['A700'],
+    }
+}));
+const CheckComponent = ({required, id, onChange}) => (
+    <StyledCheckBox
+        required={required}
+        id={id}
+        onChange={onChange}
+        icon={<RadioButtonUncheckedIcon />}
+        checkedIcon={<CheckCircleIcon />}
+        value="checkedH"
+    />
+);
+
+export const InputCheckBox = ({required, id, label, onChange}) => (
+    <FormControlLabel
+        control={<CheckComponent required={required} id={id} onChange={onChange} />}
+        label={label}
+    />
+);

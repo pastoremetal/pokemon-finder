@@ -1,15 +1,16 @@
 import React from "react";
 import Typography from '@material-ui/core/Typography';
+
 import InnerBox from "../InnerBox";
 import NextButton from "../NextButton";
 import {InputText} from "../Input";
 
-const LetsGo = ({setStep, name, type, setPokemonType}) => (
+const Type = ({setStep, name, type, setPokemonType, typeList}) => (
     <InnerBox
         component='form'
         onSubmit={e => {
             e.preventDefault();
-            setStep(2);
+            setStep(3);
         }}
     >
 
@@ -28,11 +29,12 @@ const LetsGo = ({setStep, name, type, setPokemonType}) => (
                 native: true,
             }}
         >
-            <option key='1' value='adfasd'>asdfasdfa</option>
+            {typeList.map((el, i) => <option key={i} value={el.name}>{el.name}</option>)}
+            {/*<option key='1' value='adfasd'>asdfasdfa</option>*/}
         </InputText>
 
         <NextButton type='submit' />
     </InnerBox>
 );
 
-export default LetsGo;
+export default Type;
