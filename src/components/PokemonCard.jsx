@@ -10,7 +10,7 @@ export const StyledCard = styled(Card)(({theme}) => ({
     '& > div': {
         display: 'flex',
         alignItems: 'center',
-        '& > h3': {
+        '& > h2': {
             paddingLeft: '1rem'
         }
     }
@@ -25,7 +25,7 @@ const PokemonCard = ({pokemon}) => (
                 title={pokemon.thumbnailAltText}
                 component={Avatar}
             />
-            <Typography gutterBottom component="h3">
+            <Typography gutterBottom component="h2">
                 {pokemon.name}
             </Typography>
         </CardContent>

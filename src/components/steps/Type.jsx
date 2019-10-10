@@ -24,13 +24,12 @@ const Type = ({setStep, name, type, setPokemonType, typeList}) => (
             label="...now tell us wich is your favorite Pokémon type:"
             required
             value={type}
-            onChange={e => setPokemonType(e.target.value)}
+                onChange={e => setPokemonType([e.target.value])}
             SelectProps={{
                 native: true,
             }}
         >
             {typeList.map((el, i) => <option key={i} value={el.name}>{el.name}</option>)}
-            {/*<option key='1' value='adfasd'>asdfasdfa</option>*/}
         </InputText>
 
         <NextButton type='submit' />

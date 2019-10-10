@@ -1,7 +1,7 @@
 .App {
   background-image: url("assets/bg.png");
   background-repeat: no-repeat;
-  background-size: cover;
+  background-size: contain;
   min-width: 100vw;
   min-height: 100vh;
 }

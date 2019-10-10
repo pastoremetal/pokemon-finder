@@ -28,7 +28,7 @@ const StyledApp = styled(Container)(({theme}) => ({
 
 function App() {
   const [name, setName] = useState(null);
-  const [pokemonType, setPokemonType] = useState('normal');
+  const [pokemonType, setPokemonType] = useState(['normal', 'flying']);
   const [typeList] = useState(getPokemonTypes());
   const [pokemonList] = useState(getPokemonList());
 

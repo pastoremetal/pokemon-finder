@@ -59,20 +59,30 @@ const StyledCheckBox = styled(Checkbox)(({theme}) => ({
         color: green['A700'],
     }
 }));
-const CheckComponent = ({required, id, onChange}) => (
+const CheckComponent = ({required, id, onChange, ...props}) => (
     <StyledCheckBox
+        {...props}
         required={required}
         id={id}
         onChange={onChange}
         icon={<RadioButtonUncheckedIcon />}
         checkedIcon={<CheckCircleIcon />}
-        value="checkedH"
     />
 );
 
-export const InputCheckBox = ({required, id, label, onChange}) => (
-    <FormControlLabel
-        control={<CheckComponent required={required} id={id} onChange={onChange} />}
+const StyledFormControlLabel = styled(FormControlLabel)(({theme}) => ({
+    '&': {
+        textTransform: 'capitalize',
+        display: 'flex',
+        flexGrow: 1,
+        justifyContent: 'space-between'
+    }
+}));
+export const InputCheckBox = ({required, id, name, label, value, onChange, ...options}) => (
+    <StyledFormControlLabel
+        {...options}
+        control={<CheckComponent required={required} value={value} name={name} id={id} onChange={onChange} />}
         label={label}
+        labelPlacement="start"
     />
 );
