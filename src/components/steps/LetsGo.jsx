@@ -5,7 +5,7 @@ import pikachu from "../../assets/pikachu.png";
 import Header from "../Header";
 import InnerBox from "../InnerBox";
 
-const StyledDiv = styled(InnerBox)(({them}) => ({
+const StyledDiv = styled(InnerBox)(({theme}) => ({
     '& > img': {
         position: 'absolute',
         bottom: 0,
@@ -14,7 +14,10 @@ const StyledDiv = styled(InnerBox)(({them}) => ({
     '& > button': {
         color: '#fff',
         margin: 'auto 0',
-        marginTop: '45%'
+        marginTop: '45%',
+        [theme.breakpoints.up('md')]: {
+            margin: 'auto 0'
+        }
     }
 }));
 

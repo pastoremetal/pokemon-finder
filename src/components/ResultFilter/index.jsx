@@ -7,13 +7,12 @@ import Box from "@material-ui/core/Box";
 import ArrowUpwardIcon from '@material-ui/icons/ArrowUpward';
 import ArrowDownward from '@material-ui/icons/ArrowDownward';
 import TypeList from "./TypeList";
+import Search from "./Search";
 
-const ResultFilter = ({setIsOrdered, isOrdered, pokemonType, typeList, typeExpanded,setTypeExpanded, setPokemonType}) => {
+const ResultFilter = ({setIsOrdered, isOrdered, pokemonType, typeList, typeExpanded,setTypeExpanded, setPokemonType, searchTerm, setSearchTerm}) => {
     return (
         <Box flexGrow={0} mx={['-1rem', 0]}>
-            <Typography variant='h5' component='h1' align='center'>
-                Pokémon Finder
-            </Typography>
+            <Search searchTerm={searchTerm} setSearchTerm={setSearchTerm}/>
             <TypeList
                 pokemonType={pokemonType}
                 typeList={typeList}

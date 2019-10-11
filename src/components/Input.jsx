@@ -7,6 +7,11 @@ import FormControlLabel from "@material-ui/core/FormControlLabel";
 import Checkbox from "@material-ui/core/Checkbox";
 import CheckCircleIcon from '@material-ui/icons/CheckCircle';
 import green from '@material-ui/core/colors/green';
+import InputBase from "@material-ui/core/InputBase";
+import {fade} from "@material-ui/core/styles";
+import InputAdornment from '@material-ui/core/InputAdornment';
+import SearchIcon from "@material-ui/icons/Search";
+import IconButton from "@material-ui/core/IconButton";
 
 const StyledTextField = styled(TextField)(({theme}) => ({
     '&': {
@@ -84,5 +89,54 @@ export const InputCheckBox = ({required, id, name, label, value, onChange, ...op
         control={<CheckComponent required={required} value={value} name={name} id={id} onChange={onChange} />}
         label={label}
         labelPlacement="start"
+    />
+);
+
+const StyledSearchInput = styled(InputBase)(({theme}) => ({
+    '&': {
+        padding: '0.55rem 0',
+        flexGrow: 1,
+        'label + &': {marginTop: theme.spacing(3)},
+    },
+    '& input': {
+        position: 'relative',
+        width: '100%',
+        borderTopLeftRadius: '4px',
+        borderBottomLeftRadius: '4px',
+
+        '&:focus, &:focus + div': {
+            boxShadow: `${fade(theme.palette.primary.main, 0.25)} 0 0 0 0.2rem`,
+            borderColor: theme.palette.primary.main,
+        },
+    },
+    '& input, & input + div': {
+        backgroundColor: theme.palette.common.white,
+        padding: '0.625rem 0.75rem',
+        transition: theme.transitions.create(['border-color', 'box-shadow']),
+        border: '1px solid #ced4da',
+
+    },
+    '& input + div': {
+        height: '1.1875rem',
+        borderTopRightRadius: '4px',
+        borderBottomRightRadius: '4px',
+        margin: 0
+    }
+}));
+
+export const SearchInput = ({onChange, value}) => (
+    <StyledSearchInput
+        onChange={e => onChange && onChange(e)}
+        value={value}
+        endAdornment={
+            <InputAdornment position="end">
+                <IconButton
+                    type="submit"
+                    aria-label="toggle password visibility"
+                >
+                    <SearchIcon/>
+                </IconButton>
+            </InputAdornment>
+        }
     />
 );

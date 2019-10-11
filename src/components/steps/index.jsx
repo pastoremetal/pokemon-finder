@@ -15,7 +15,7 @@ function getStep(step) {
     return stepList[step];
 }
 
-const Steps = ({name, pokemonType, setName, setPokemonType, typeList, pokemonList}) => {
+const Steps = ({name, pokemonType, setName, setPokemonType, typeList, pokemonList, searchTerm, setSearchTerm}) => {
     const [step, setStep] = useState(0  );
     const StepComponent = getStep(step);
 
@@ -28,6 +28,8 @@ const Steps = ({name, pokemonType, setName, setPokemonType, typeList, pokemonLis
             setPokemonType={setPokemonType}
             typeList={typeList}
             pokemonList={pokemonList}
+            searchTerm={searchTerm}
+            setSearchTerm={setSearchTerm}
         />);
 };
 

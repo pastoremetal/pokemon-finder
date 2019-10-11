@@ -3,11 +3,14 @@ import styled from "@material-ui/core/styles/styled";
 import logoX3 from "../assets/pokemon-logo@3x.png";
 import finderX3 from "../assets/finder@3x.png";
 
-const StyledHeader = styled('header')(({theme}) => ({
+const StyledHeader = styled('header')(() => ({
     '&': {
         textAlign: 'center',
         '& > img:first-child': {
             width: '100%'
+        },
+        '& > img:nth-child(2)': {
+            maxWidth: '12rem'
         }
     }
 }));

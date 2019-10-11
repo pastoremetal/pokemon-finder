@@ -5,26 +5,23 @@ import Collapse from '@material-ui/core/Collapse';
 import PokemonCard from "../PokemonCard";
 import ResultFilter from "../ResultFilter";
 
-const Result = ({setStep, name, pokemonType, setPokemonType, typeList, pokemonList}) => {
+const Result = ({pokemonType, setPokemonType, typeList, pokemonList,  searchTerm, setSearchTerm}) => {
     const [isOrdered, setIsOrdered] = useState(false);
     const [typeExpanded, setTypeExpanded] = useState(false);
 
     let filteredList = pokemonType && pokemonList.filter(el => (
         el.type.filter(n => pokemonType.includes(n)).length === pokemonType.length
     ));
+    if (searchTerm) {
+        filteredList = filteredList.filter(el => el.name.toLowerCase().includes(searchTerm))
+    }
+
     if (isOrdered) {
         filteredList.sort((a, b) => a.name > b.name);
     }
 
     return (
-        <InnerBox
-            component='form'
-            onSubmit={e => {
-                e.preventDefault();
-                console.log(e);
-                // setStep(2);
-            }}
-        >
+        <InnerBox>
             <ResultFilter
                 setIsOrdered={setIsOrdered}
                 isOrdered={isOrdered}
@@ -33,6 +30,8 @@ const Result = ({setStep, name, pokemonType, setPokemonType, typeList, pokemonLi
                 typeExpanded={typeExpanded}
                 setTypeExpanded={setTypeExpanded}
                 setPokemonType={setPokemonType}
+                searchTerm={searchTerm}
+                setSearchTerm={setSearchTerm}
             />
             <Collapse component={Box} flexGrow={1} mx={['-1rem', 0]} in={!typeExpanded}>
                 {filteredList.map((el, i) => (
