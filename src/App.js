@@ -4,8 +4,6 @@ import Container from '@material-ui/core/Container';
 import 'typeface-roboto';
 import './App.css';
 import Steps from "./components/steps";
-import bg2x from "./assets/bg@2x.png";
-import bg3x from "./assets/bg@3x.png";
 import {getPokemonTypes, getPokemonList} from "./components/utils";
 
 const StyledApp = styled(Container)(({theme}) => ({
@@ -16,13 +14,10 @@ const StyledApp = styled(Container)(({theme}) => ({
     paddingTop: '3rem',
     paddingBottom: '1.5rem',
     color: '#fff',
+    minHeight: '100%',
     [theme.breakpoints.up('sm')]: {
-      backgroundImage: `url(${bg2x})`,
       flexDirection: 'row'
     },
-    [theme.breakpoints.up('md')]: {
-      backgroundImage: `url(${bg3x})`
-    }
   }
 }));
 
@@ -33,7 +28,7 @@ function App() {
   const [pokemonList] = useState(getPokemonList());
 
   return (
-    <StyledApp className="App">
+    <StyledApp className="App" maxWidth="sm">
       <Steps
           name={name}
           pokemonType={pokemonType}

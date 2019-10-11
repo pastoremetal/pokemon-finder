@@ -1,7 +1,7 @@
 import React from "react";
 import styled from "@material-ui/core/styles/styled";
-import logo from "../assets/pokemon-logo.png";
-import finder from "../assets/finder.png";
+import logoX3 from "../assets/pokemon-logo@3x.png";
+import finderX3 from "../assets/finder@3x.png";
 
 const StyledHeader = styled('header')(({theme}) => ({
     '&': {
@@ -12,11 +12,13 @@ const StyledHeader = styled('header')(({theme}) => ({
     }
 }));
 
-const Header = () => (
+const Header = () => {
+    return (
     <StyledHeader>
-        <img src={logo} alt="Pokémon Logo" />
-        <img src={finder} alt="Finder" />
+        <img src={logoX3} alt="Pokémon Logo" />
+        <img src={finderX3} alt="Finder" />
     </StyledHeader>
-);
+    );
+}
 
 export default Header;

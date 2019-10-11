@@ -1,7 +1,28 @@
-.App {
+body {
   background-image: url("assets/bg.png");
   background-repeat: no-repeat;
-  background-size: contain;
-  min-width: 100vw;
-  min-height: 100vh;
+  background-size: cover;
+  height: 100vh;
+  overflow: visible;
+}
+
+#root {
+  height: 100%;
+}
+
+@media (min-width: 600px) {
+  body {
+    background-image: url("assets/bg@2x.png");
+  }
+
+  #root {
+    height: 100%;
+    overflow: auto;
+  }
+}
+
+@media (min-width: 960px) {
+  body {
+    background-image: url("assets/bg@3x.png");
+  }
 }

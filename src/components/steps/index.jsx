@@ -16,7 +16,7 @@ function getStep(step) {
 }
 
 const Steps = ({name, pokemonType, setName, setPokemonType, typeList, pokemonList}) => {
-    const [step, setStep] = useState(3  );
+    const [step, setStep] = useState(0  );
     const StepComponent = getStep(step);
 
     return (

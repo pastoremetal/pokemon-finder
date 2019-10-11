@@ -14,13 +14,14 @@ import {InputCheckBox} from "../Input";
 
 const StyledCard = styled(Card)(({theme}) => ({
     '& > div:first-child': {
-        '& button': {
-            padding: 0
-        }
+
     },
     '& > div:nth-child(2)': {
         padding: 0,
-        justifyContent: 'center'
+        justifyContent: 'center',
+        '& button': {
+            padding: 0
+        }
     }
 }));
 

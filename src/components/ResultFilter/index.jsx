@@ -25,7 +25,7 @@ const ResultFilter = ({setIsOrdered, isOrdered, pokemonType, typeList, typeExpan
                 <Card square align='right'>
                     <CardContent component={Box} py='0.5rem !important'>
                         <Button onClick={() => setIsOrdered(!isOrdered)} endIcon={isOrdered ? <ArrowDownward /> : <ArrowUpwardIcon />}>
-                            <Typography variant='caption' >
+                            <Typography variant='caption'>
                                 Order
                             </Typography>
                         </Button>
