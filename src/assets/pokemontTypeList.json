@@ -1,0 +1,74 @@
+[
+  {
+    "thumbnailImage": "normal.png",
+    "name": "normal"
+  },
+  {
+    "thumbnailImage": "fighting.png",
+    "name": "fighting"
+  },
+  {
+    "thumbnailImage": "flying.png",
+    "name": "flying"
+  },
+  {
+    "thumbnailImage": "poison.png",
+    "name": "poison"
+  },
+  {
+    "thumbnailImage": "ground.png",
+    "name": "ground"
+  },
+  {
+    "thumbnailImage": "rock.png",
+    "name": "rock"
+  },
+  {
+    "thumbnailImage": "bug.png",
+    "name": "bug"
+  },
+  {
+    "thumbnailImage": "ghost.png",
+    "name": "ghost"
+  },
+  {
+    "thumbnailImage": "steel.png",
+    "name": "steel"
+  },
+  {
+    "thumbnailImage": "fire.png",
+    "name": "fire"
+  },
+  {
+    "thumbnailImage": "water.png",
+    "name": "water"
+  },
+  {
+    "thumbnailImage": "grass.png",
+    "name": "grass"
+  },
+  {
+    "thumbnailImage": "electric.png",
+    "name": "electric"
+  },
+  {
+    "thumbnailImage": "psychic.png",
+    "name": "psychic"
+  },
+  {
+    "thumbnailImage": "ice.png",
+    "name": "ice"
+  },
+  {
+    "thumbnailImage": "dragon.png",
+    "name": "dragon"
+  },
+  {
+    "thumbnailImage": "dark.png",
+    "name": "dark"
+  },
+  {
+    "thumbnailImage": "fairy.png",
+    "name": "fairy"
+  }
+]

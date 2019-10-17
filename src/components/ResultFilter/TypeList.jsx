@@ -30,6 +30,7 @@ const TypeList = ({
   typeExpanded,
   setTypeExpanded
 }) => {
+  console.log(process.env);
   const [selectedTypes, setSelected] = useState(
     Object.assign({}, ...pokemonType.map(el => ({ [el]: true })))
   );
@@ -61,7 +62,7 @@ const TypeList = ({
           {pokemonType.map((el, i) => (
             <Avatar
               key={i}
-              src={typeList.find(t => t.name === el).thumbnailImage}
+              src={`${process.env.REACT_APP_IMAGES_DIR}type/${typeList.find(t => t.name === el).thumbnailImage}`}
             />
           ))}
         </CardContent>
